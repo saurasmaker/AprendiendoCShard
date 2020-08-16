@@ -14,7 +14,9 @@ namespace AprendiendoCShard
         {
 
         }
-
+        public int SumaLadoVertice() {
+            return (this.lados + this.vertices); //this.lados significa que "lados" pertenece a la variable que hemos declarado arriba y no a cualquier otra variable declarada en otro lugar.
+        }
 
     }
 }
