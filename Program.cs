@@ -49,6 +49,23 @@ namespace AprendiendoCShard
             //Se puede hacer lo tipico del i++//i--//++i//--i que es igual que en C y todos sabemos para que sirve.
             //Hay una variación que es poniendo i+=X, donde x es un valor, y cambia en ese valor, válido para las combinaciones previas.
 
+            /*
+             Existen diferentes funciones que son útiles:
+            ->Valor Absoluto:   Math.Abs(a);    Calcula el valor absoluto de un numero.
+            ->Redondeo clásico  Math.Round(a);  Redondea para arriba si el decimal es mayor que 5 y para abajo si es menor, vamos igual que en los examenes del insti.
+            ->Redondeo al alza  Math.Ceiling(a);Redondea siempre para arriba.
+            ->Redondeo a la bajaMath.Floor(a);  Redondea siempre para abajo.
+            ->Numero grande     Math.Max(a,b);  Compara dos numeros y muestra el mas alto.
+            ->Numero peque      Math.Min(a,b);  Compara dos numeros y muestra el mas bajo.
+            ->Potencia          Math.Pow(a,X);  Eleva el numero a la potencia X.
+            ->Raiz cuadrada     Math.Sqrt(a);   Hace la raiz cuadrada del numero.
+             */
+
+            //Numero Aleatorio
+            Random numero = new Random();
+
+            var aleatorio = numero.Next(1,11); //Genera un numero al azar entre 1 y 10, excluye el ultimo numero.
+
 
 
 
