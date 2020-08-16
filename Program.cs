@@ -7,7 +7,10 @@ namespace AprendiendoCShard
         static void Main(string[] args)
         {
 
-            Console.WriteLine("Esta solucionado");
+            Console.WriteLine("Guardamos en memoria un T2.");
+
+            
+            T2 triangulo2 = new T2(); //Guardamos en memoria un objeto T2
 
         }
     }
