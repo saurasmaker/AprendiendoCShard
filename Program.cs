@@ -66,6 +66,57 @@ namespace AprendiendoCShard
 
             var aleatorio = numero.Next(1,11); //Genera un numero al azar entre 1 y 10, excluye el ultimo numero.
 
+            //Condicionales y Bucles:
+            //Operadores relacionales [< > <= >= == !=] [Menor, Mayor, Menor o Igual, Mayor o Igual, Igual, Distinto]
+            //Operadores lógicos [&& || ^ !] [And, Or, Or exclusivo, Not]
+
+            //IF
+            /*
+            if (){
+            }
+            else if(){
+            }
+            else(){
+            }
+            */
+
+            //Operador Ternario
+            //bool a = (Condicion) ? true : false; Si se cumple dice true y si no dice false, sencillo, facil, logico.
+
+            //Switch
+            /*
+            switch(opcion){
+                case "cadena"/numero:
+                    *Pasan cosas here*
+                    break;
+                default:
+                    Cosas
+                    break;
+            }                                   Es igual que el de C, no tiene mayor complicacion. (Por algo el lenguaje se llama C#)
+            */
+
+            //WHILE
+            /*
+             While(){
+             pasan cosas
+             }
+             */
+
+            //DO WHILE
+            /*
+             do{
+            }while (condicion); LA CONDICION DEBE SER TRUE.
+            */
+
+            //FOR
+            /*
+             for(int i=0; condicion; i++){
+            }
+             ES UN FOR DE TODA LA VIDA
+             
+             */
+
+            
 
 
 
