@@ -116,6 +116,13 @@ namespace AprendiendoCShard
              
              */
 
+            //FOREACH
+            /*
+             foreach(char caracter in cadena){
+                PASAN COSAS;
+            }
+             */
+
             
 
 
