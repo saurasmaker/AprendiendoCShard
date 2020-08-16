@@ -6,5 +6,13 @@ namespace AprendiendoCShard
 {
     class T2
     {
+
+        int lados, vertices, longitudHipotenusa;
+
+
+
+
+
+
     }
 }
