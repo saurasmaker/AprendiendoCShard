@@ -6,9 +6,7 @@ namespace AprendiendoCShard
     {
         static void Main(string[] args)
         {
-
-            Console.WriteLine("Esta solucionado");
-
+            Console.WriteLine("Hello World!");
         }
     }
 }
