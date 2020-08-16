@@ -18,7 +18,7 @@ namespace AprendiendoCShard
             return (this.lado * 2);
         }
 
-        static ChorroPalabras()
+        static void ChorroPalabras()
         {
             Console.WriteLine("Esto es un chorro de palabras que uso para definir una estatic porque tengo que practicar, pero no confundir con el Puñal de Statikk que eso hace cosas y esto no\nComprendes?");
         }
