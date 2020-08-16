@@ -37,6 +37,20 @@ namespace AprendiendoCShard
 
              */
 
+            //Operaciones y cosas:
+            var a = 1;
+            var b = 2;
+            var c = a + b;
+            //Esto es una suma, usando var te quitas el problema de la compatibilidad de datos entre int, float y esas mierdas.
+            c = a - b;
+            c = a / b;
+            c = a * b;
+            c = a % b; //Esto es el módulo, es decir, el resto de la división entera.
+            //Se puede hacer lo tipico del i++//i--//++i//--i que es igual que en C y todos sabemos para que sirve.
+            //Hay una variación que es poniendo i+=X, donde x es un valor, y cambia en ese valor, válido para las combinaciones previas.
+
+
+
 
 
         }
