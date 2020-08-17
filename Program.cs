@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace AprendiendoCShard
 {
@@ -123,7 +124,20 @@ namespace AprendiendoCShard
             }
              */
 
-            
+            //LISTAS
+            //Arriba debe ir declarado using System.Collections.Generic
+            List<int> listaDeNumeros = new List<int>();
+
+            /*listaDeNumeros.Add(X)*///Esto sirve para añadir al final un numero, pero la lista puede ser de cualquier cosa, no solo numeros.
+            // listaDeNumeros.AddRange(Array);
+            // Se puede crear una lista a raiz de un array: List<int> listaDeNumeros = new List<int>(array);
+            //Tambien se puede: List<int> listaDeNumeros = new List<int>(new int[] {1, 2, 3, 4}); de esta forma defines que quieres un array pero no defines el array como tal
+
+            //listaDeNumeros.Insert(0, 14); esta funcion inserta el 14 en la posicion 0 de la lista SUSTITUYENDO lo que hubiera ahi.
+            //listaDeNumeros.Remove(14); esta funcion busca los 14 de la lista y los borra para siempre.
+            //listaDeNumeros.RemoveAt(0); esta funcion busca la posicion 0 de la lista y la borra para siempre.
+
+
 
 
 
