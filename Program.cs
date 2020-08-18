@@ -3,6 +3,31 @@ using System.Collections.Generic;
 
 namespace AprendiendoCShard
 {
+    struct Estructura //Aqui se define una estructura básica
+    {
+        public int Entero;
+        public string Cadena;
+        public float Decimal; //Es SUPER IMPORTANTE que los atributos sean públicos si queremos acceder a ellos y modificarlos
+
+        //Constructor de la estructura
+        public Estructura(int Entero, string Cadena, float Decimal)
+        {
+            this.Entero = Entero;
+            this.Cadena = Cadena;
+            this.Decimal = Decimal;
+        }
+
+        //Método propio de la estructura
+        public void Info() //VOID significa que no devuelve nada al llamar al método
+        {
+            Console.WriteLine("Entero:" + this.Entero);
+            Console.WriteLine("Cadena:" + this.Cadena);
+            Console.WriteLine("Decimal:" + this.Decimal); //No hace falta definir con el this. pero queda mas claro.
+        }
+    
+    }
+    
+    
     class Program
     {
         static void Main(string[] args)
@@ -65,7 +90,7 @@ namespace AprendiendoCShard
             //Numero Aleatorio
             Random numero = new Random();
 
-            var aleatorio = numero.Next(1,11); //Genera un numero al azar entre 1 y 10, excluye el ultimo numero.
+            var aleatorio = numero.Next(1, 11); //Genera un numero al azar entre 1 y 10, excluye el ultimo numero.
 
             //Condicionales y Bucles:
             //Operadores relacionales [< > <= >= == !=] [Menor, Mayor, Menor o Igual, Mayor o Igual, Igual, Distinto]
@@ -137,11 +162,30 @@ namespace AprendiendoCShard
             //listaDeNumeros.Remove(14); esta funcion busca los 14 de la lista y los borra para siempre.
             //listaDeNumeros.RemoveAt(0); esta funcion busca la posicion 0 de la lista y la borra para siempre.
 
+            //Estructuras
+            /* 
+             Las estructuras se definen fuera del Main (como siempre), con la sintaxis struct nombre{COSAS}
+                Se crea una estructura así -> [Nombre de la Estructura definida] [Nombre de la variable] = new [Nombre de la Estructura definida]*/
+            Estructura prueba = new Estructura();//Ejemplo de creacion de una Estructura definida arriba.
+            prueba.Entero = 0;//Se accede a sus atributos poniendo un puntito porque son PUBLICOS.
+            //Las Estructuras tienen un CONSTRUCTOR de ESTRUCTURAS que se define (opcionalmente) dentro de la propia estructura
+            Estructura prueba2 = new Estructura(12, "Segunda", 1.2f);
+            //APARTE las estructuras pueden tener métodos internos propios que no son el constructor.
+            prueba2.Info();//Llamamos al método.
 
+            Estructura[] SuperEstructura =
+            {
+                new Estructura(1, "a", 1.0f),
+                new Estructura(13, "f", 1.2f),
+                new Estructura(56, "b", 2.3f),
+            }; //Array de Estructuras
 
+            List<Estructura> datos = new List<Estructura>(SuperEstructura); //Con esto creamos una lista a partir de un array de estructuras
 
-
-
+            foreach(Estructura dato in datos)
+            {
+                dato.Info(); //Con este bucle recorremos la lista entera.
+            }
         }
     }
 }
