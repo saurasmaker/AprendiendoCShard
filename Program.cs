@@ -26,6 +26,34 @@ namespace AprendiendoCShard
         }
     
     }
+    //ESTRUCTURA para guardar un animal
+    struct Animal
+    {
+        public string nombre;
+
+        public Animal(string nombre)
+        {
+            this.nombre = nombre;
+        }
+        public void info()
+        {
+            Console.WriteLine("Nombre del animal ->" + nombre);
+        }
+    }
+    //CLASE para guardar un animal
+    class claseAnimal
+    {
+        public string nombre;
+
+        public claseAnimal(string nombre)
+        {
+            this.nombre = nombre;
+        }
+        public void info()
+        {
+            Console.WriteLine("Nombre del animal ->" + nombre);
+        }
+    }
     
     
     class Program
@@ -186,6 +214,24 @@ namespace AprendiendoCShard
             {
                 dato.Info(); //Con este bucle recorremos la lista entera.
             }
+            //CLASES
+            //Arriba esta guardada la estructura de un animal.
+            Animal sPerro = new Animal("Perro");
+            Animal sPerroCopia = sPerro;
+
+            sPerro.nombre = "Gato";
+            
+            sPerro.info();
+            sPerroCopia.info();
+            //Ejemplo de Estructuras, ahora se usa lo mismo con las clases para comprobar que no son objetos independientes.
+            claseAnimal cPerro = new claseAnimal("Perro");
+            claseAnimal cPerroCopia = cPerro;
+
+            cPerro.nombre = "Gato";
+
+            cPerro.info();
+            cPerroCopia.info();//La diferencia entre las estructuras y las clases es que las estructuras son valores staticas mientras que las clases hacen referencia en memoria y heredan de otras, todos los cambios.
+
         }
     }
 }
