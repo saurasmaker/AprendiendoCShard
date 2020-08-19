@@ -54,6 +54,59 @@ namespace AprendiendoCShard
             Console.WriteLine("Nombre del animal ->" + nombre);
         }
     }
+
+    class AnimalSonido
+    {
+        public string nombre; //public es que se puede acceder desde cualquier lado sin problemas
+        private double peso;   //private es que solo se puede acceder desde la propia clase
+        public double PESO
+        {
+            get { return peso; }
+            set { 
+                if (value > 0)
+                {
+                    peso = value;
+                }
+                else
+                {
+                    Console.WriteLine("El valor no puede ser 0 o menor");
+                }
+            }
+        }
+        protected string sonido; //protected es que solo se puede acceder desde la clase o sus hijos
+        public string SONIDO
+        {
+            get { return sonido; }
+            set { sonido = value; }
+        }
+
+        public AnimalSonido()
+        {
+            this.nombre = "";
+            this.peso = 0;
+            this.sonido = "";
+        }
+        public AnimalSonido(string nombre, double peso, string sonido)
+        {
+            this.nombre = nombre;
+            this.PESO = peso;
+            this.SONIDO = sonido;
+        }
+    }
+
+    class Pajaro : AnimalSonido //Esto es una sublclase
+    {
+        public bool vuela;
+
+        public Pajaro() : base()
+        {
+            this.vuela = true;
+        }
+        public Pajaro(string nombre, double peso, string sonido, bool vuela) : base(nombre, peso, sonido)
+        {
+            this.vuela = vuela;
+        }
+    }
     
     
     class Program
@@ -231,6 +284,11 @@ namespace AprendiendoCShard
 
             cPerro.info();
             cPerroCopia.info();//La diferencia entre las estructuras y las clases es que las estructuras son valores staticas mientras que las clases hacen referencia en memoria y heredan de otras, todos los cambios.
+
+            AnimalSonido PERRO = new AnimalSonido();
+            PERRO.nombre = "Gustavo";
+            PERRO.PESO = 2.00;
+            PERRO.SONIDO = "Woff";           
 
         }
     }
