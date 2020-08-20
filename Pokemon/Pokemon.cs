@@ -191,7 +191,37 @@ namespace AprendiendoCShard.Pokemon
 
         private byte FluctuatingLevelCalculator()
         {
-            return 0;
+            byte n = (byte)(Level + 1);
+            ulong newExp = Experience;
+
+            if (0 < n && n <= 15)
+            {
+                if ((newExp -= (ulong)(Math.Pow(n, 3) * ((24 + ((n + 1) / 3)) / 50))) <= 0)
+                {
+                    Experience = newExp;
+                    return n;
+                }
+            }
+
+            else if (16 <= n && n <= 35)
+            {
+                if ((newExp -= (ulong)(Math.Pow(n, 3) * ((14 + n) / 50))) <= 0)
+                {
+                    Experience = newExp;
+                    return n;
+                }
+            }
+
+            else if (36 <= n && n <= 100)
+            {
+                if ((newExp -= (ulong)(Math.Pow(n, 3) * ((32 + (n / 2)) / 50))) <= 0)
+                {
+                    Experience = newExp;
+                    return n;
+                }
+            }
+
+            return Level;
         }
 
 
