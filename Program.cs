@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Xml;
 
 namespace AprendiendoCShard
@@ -106,6 +107,43 @@ namespace AprendiendoCShard
         public Pajaro(string nombre, double peso, string sonido, bool vuela) : base(nombre, peso, sonido)
         {
             this.vuela = vuela;
+        }
+    }
+
+    class Boss
+    {
+        private string type;
+        public string TYPE
+        {
+            get { return type; }
+            set { type = value; }
+        }
+        private string name;
+        public string NAME
+        {
+            get { return name; }
+            set { name = value; }
+        }
+        private int CR;
+        public int ChallengeRate
+        {
+            get { return CR; }
+            set
+            {
+                if (value > 0)
+                {
+                    CR = value;
+                }
+                else
+                {
+
+                }
+            }
+        }
+
+        public void BossInfo()
+        {
+            Console.WriteLine("El Boss es {0}, se llama {1} y su CR es {2}",this.type,this.name,this.CR);
         }
     }
     
