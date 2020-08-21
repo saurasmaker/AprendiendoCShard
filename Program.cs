@@ -12,7 +12,6 @@ namespace AprendiendoCShard
     {
         static void Main(string[] args)
         {
-
             OPokemon pokemon = Pokedex.LoadPokemonFromXML("0");
             Console.WriteLine(Directory.GetCurrentDirectory() + "/Saves/pokedex.xml");
             return;
