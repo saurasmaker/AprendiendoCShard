@@ -11,6 +11,9 @@ namespace AprendiendoCShard
         static void Main(string[] args)
         {
 
+            Console.WriteLine("Hola Mundo");
+
+            return;
         }
     }
 }
