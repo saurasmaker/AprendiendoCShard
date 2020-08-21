@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\saura\\Proyectos_Programacion\\C#\\AprendiendoCShard\\AprendiendoCShard\\AprendiendoCShard.csproj": {}
+    "C:\\Users\\Usuario\\Documents\\GitHub\\AprendiendoCShard\\AprendiendoCShard.csproj": {}
   },
   "projects": {
-    "C:\\Users\\saura\\Proyectos_Programacion\\C#\\AprendiendoCShard\\AprendiendoCShard\\AprendiendoCShard.csproj": {
+    "C:\\Users\\Usuario\\Documents\\GitHub\\AprendiendoCShard\\AprendiendoCShard.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\saura\\Proyectos_Programacion\\C#\\AprendiendoCShard\\AprendiendoCShard\\AprendiendoCShard.csproj",
+        "projectUniqueName": "C:\\Users\\Usuario\\Documents\\GitHub\\AprendiendoCShard\\AprendiendoCShard.csproj",
         "projectName": "AprendiendoCShard",
-        "projectPath": "C:\\Users\\saura\\Proyectos_Programacion\\C#\\AprendiendoCShard\\AprendiendoCShard\\AprendiendoCShard.csproj",
-        "packagesPath": "C:\\Users\\saura\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\saura\\Proyectos_Programacion\\C#\\AprendiendoCShard\\AprendiendoCShard\\obj\\",
+        "projectPath": "C:\\Users\\Usuario\\Documents\\GitHub\\AprendiendoCShard\\AprendiendoCShard.csproj",
+        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Usuario\\Documents\\GitHub\\AprendiendoCShard\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\saura\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
