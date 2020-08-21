@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
 using System.Xml;
 
 namespace AprendiendoCShard
@@ -146,6 +147,7 @@ namespace AprendiendoCShard
             Console.WriteLine("El Boss es {0}, se llama {1} y su CR es {2}",this.type,this.name,this.CR);
         }
     }
+
     
     
     class Program
@@ -340,6 +342,58 @@ namespace AprendiendoCShard
 
             XmlElement titulo = Documento.CreateElement("Titulo");
             titulo.AppendChild(Documento.CreateTextNode("Esto es un titulo"));*/
+            List<Boss> BossList = new List<Boss>();
+            
+            XmlDocument Lector = new XmlDocument();
+
+            Lector.Load("d:\\xml\\Bosses.xml");
+            int f = 0;
+
+            
+            for (int j=0; j<Lector.DocumentElement.ChildNodes.Count;j++){
+                XmlNode node = Lector.DocumentElement.ChildNodes[j];
+                if (node.HasChildNodes)
+                {
+                    BossList.Add(new Boss());
+                    for (int i = 0; i < node.ChildNodes.Count; i++)
+                    {
+                        
+                        BossList[j].TYPE = node.Name;
+                        
+                        if (node.ChildNodes[i].Name == "Nombre"){
+                            BossList[j].NAME = node.ChildNodes[i].InnerText;
+                        }
+                        else if (node.ChildNodes[i].Name == "CR"){
+                            BossList[j].ChallengeRate = Convert.ToInt32(node.ChildNodes[i].InnerText);
+                        }
+                        
+                        Console.WriteLine("{0}", node.Name);
+                        Console.WriteLine(node.ChildNodes[i].Name + ": " + node.ChildNodes[i].InnerText);
+                        
+                        
+                    }
+                }
+            }
+            int NumeroTotal = 0;
+            foreach (Boss FB in BossList)
+            {
+                
+                NumeroTotal++;
+            }
+
+
+            /*for(int depuradora = 0; depuradora < NumeroTotal; depuradora++)
+            {
+                if (BossList[depuradora].NAME == null)
+                {
+                    BossList.RemoveAt(depuradora);
+                    NumeroTotal--;
+                }
+            }*/
+            
+            
+            
+
 
             XmlDocument Bosses = new XmlDocument(); //Se crea un superelemento llamado Bosses
             XmlElement raiz = Bosses.CreateElement("Raiz"); //Creo un elemento raiz, hijo de Bosses que contendrá todos los demas elementos.
@@ -360,71 +414,183 @@ namespace AprendiendoCShard
 
             int dina = 0; //estas variables estan para detectar si es la primera vez que se accede al tipo, es decir, para rellenar el espacio declarado arriba y que no se quede vacío.
             int giga = 0;
+            
 
-
-            Console.WriteLine("¿Quieres crear un Boss?\nIntroduce Si para empezar o cualquier botón para salir");
-            string Condicion = Console.ReadLine();
-            while (Condicion == "Si" || Condicion == "si" || Condicion == "SI") //He puesto por si acaso varias formas de escribir Si, para que a la gente no le den embolias
+            
+            while (true)
             {
-                Console.WriteLine("¿Es Gigamax o Dinamax?");
-                Condicion = Console.ReadLine();
-                if (Condicion == "Gigamax" || Condicion == "gigamax" || Condicion == "giga" || Condicion == "Giga" || Condicion == "GIGA"|| Condicion == "GIGAMAX") //Same here que con si
+                Console.WriteLine("¿Que quieres hacer?\n1) Crear una nueva lista de Bosses\n2) Actualizar la existente\n3) Convertir la lista existente en archivo\n4) Mostrar la lista\nOtro) Salir");
+                string Cosita = Console.ReadLine(); 
+                string Condicion = "Si";
+                switch (Cosita)
                 {
-                    if (giga == 0) //Aqui mira si es la primera vez que se crea un Gigamax
-                    {
-                        Console.WriteLine("\n\nIntroduce el nombre: ");
-                        NombreGiga.AppendChild(Bosses.CreateTextNode(Console.ReadLine()));
-                        Console.WriteLine("\nIntroduce su CR: ");
-                        CRgiga.AppendChild(Bosses.CreateTextNode(Console.ReadLine()));
-                        giga++;
-                    }
-                    else
-                    {
-                        Gigamax = Bosses.CreateElement("Gigamax");
-                        raiz.AppendChild(Gigamax);
-                        Console.WriteLine("\n\nIntroduce el nombre: ");
-                        NombreGiga = Bosses.CreateElement("Nombre");
-                        Gigamax.AppendChild(NombreGiga);
-                        NombreGiga.AppendChild(Bosses.CreateTextNode(Console.ReadLine()));
-                        Console.WriteLine("\nIntroduce su CR: ");
-                        CRgiga = Bosses.CreateElement("CR");
-                        Gigamax.AppendChild(CRgiga);
-                        CRgiga.AppendChild(Bosses.CreateTextNode(Console.ReadLine()));
-                    }
-                    
+                    case "1":
+                        while (Condicion == "Si" || Condicion == "si" || Condicion == "SI") //He puesto por si acaso varias formas de escribir Si, para que a la gente no le den embolias
+                        {
+                            Console.WriteLine("¿Es Gigamax o Dinamax?");
+                            Condicion = Console.ReadLine();
+                            if (Condicion == "Gigamax" || Condicion == "gigamax" || Condicion == "giga" || Condicion == "Giga" || Condicion == "GIGA" || Condicion == "GIGAMAX") //Same here que con si
+                            {
+                                if (giga == 0) //Aqui mira si es la primera vez que se crea un Gigamax
+                                {
+                                    Console.WriteLine("\n\nIntroduce el nombre: ");
+                                    NombreGiga.AppendChild(Bosses.CreateTextNode(Console.ReadLine()));
+                                    Console.WriteLine("\nIntroduce su CR: ");
+                                    CRgiga.AppendChild(Bosses.CreateTextNode(Console.ReadLine()));
+                                    giga++;
+                                }
+                                else
+                                {
+                                    Gigamax = Bosses.CreateElement("Gigamax");
+                                    raiz.AppendChild(Gigamax);
+                                    Console.WriteLine("\n\nIntroduce el nombre: ");
+                                    NombreGiga = Bosses.CreateElement("Nombre");
+                                    Gigamax.AppendChild(NombreGiga);
+                                    NombreGiga.AppendChild(Bosses.CreateTextNode(Console.ReadLine()));
+                                    Console.WriteLine("\nIntroduce su CR: ");
+                                    CRgiga = Bosses.CreateElement("CR");
+                                    Gigamax.AppendChild(CRgiga);
+                                    CRgiga.AppendChild(Bosses.CreateTextNode(Console.ReadLine()));
+                                }
+
+                            }
+                            else if (Condicion == "Dinamax" || Condicion == "dinamax" || Condicion == "dina" || Condicion == "Dina" || Condicion == "DINA" || Condicion == "DINAMAX") //Same here que con si
+                            {
+                                if (dina == 0) //Aqui mira si es la primera vez que se crea un Dinamax
+                                {
+                                    Console.WriteLine("\n\nIntroduce el nombre: ");
+                                    NombreDina.AppendChild(Bosses.CreateTextNode(Console.ReadLine()));
+                                    Console.WriteLine("\nIntroduce su CR: ");
+                                    CRdina.AppendChild(Bosses.CreateTextNode(Console.ReadLine()));
+                                    dina++;
+                                }
+                                else
+                                {
+                                    Dinamax = Bosses.CreateElement("Dinamax");
+                                    raiz.AppendChild(Dinamax);
+                                    Console.WriteLine("\n\nIntroduce el nombre: ");
+                                    NombreDina = Bosses.CreateElement("Nombre");
+                                    Dinamax.AppendChild(NombreDina);
+                                    NombreDina.AppendChild(Bosses.CreateTextNode(Console.ReadLine()));
+                                    Console.WriteLine("\nIntroduce su CR: ");
+                                    CRdina = Bosses.CreateElement("CR");
+                                    Dinamax.AppendChild(CRdina);
+                                    CRdina.AppendChild(Bosses.CreateTextNode(Console.ReadLine()));
+                                }
+
+                            }
+                            else
+                            {
+                                Console.WriteLine("No has utilizado un tipo especificado");
+                            }
+                            Console.WriteLine("¿Quieres continuar o salir?\nIntroduce Si para empezar o cualquier botón para salir");
+                            Condicion = Console.ReadLine();
+                        }
+                        Bosses.Save("d:\\xml\\Bosses.xml");
+                        for (int j = 0; j < Lector.DocumentElement.ChildNodes.Count; j++)
+                        {
+                            XmlNode node = Lector.DocumentElement.ChildNodes[j];
+                            if (node.HasChildNodes)
+                            {
+                                BossList.Add(new Boss());
+                                for (int i = 0; i < node.ChildNodes.Count; i++)
+                                {
+
+                                    BossList[j].TYPE = node.Name;
+
+                                    if (node.ChildNodes[i].Name == "Nombre")
+                                    {
+                                        BossList[j].NAME = node.ChildNodes[i].InnerText;
+                                    }
+                                    else if (node.ChildNodes[i].Name == "CR")
+                                    {
+                                        BossList[j].ChallengeRate = Convert.ToInt32(node.ChildNodes[i].InnerText);
+                                    }
+
+                                    Console.WriteLine("{0}", node.Name);
+                                    Console.WriteLine(node.ChildNodes[i].Name + ": " + node.ChildNodes[i].InnerText);
+
+
+                                }
+                            }
+                        }
+                        break;
+                    case "2":
+                        while (Condicion == "Si" || Condicion == "si" || Condicion == "SI")
+                        {
+
+                            BossList.Add(new Boss());
+                            Console.WriteLine("Introduce el tipo [Debe ser Gigamax o Dinamax]");
+                            BossList[NumeroTotal].TYPE = Console.ReadLine();
+                            Console.WriteLine("Introduce el nombre");
+                            BossList[NumeroTotal].NAME = Console.ReadLine();
+                            Console.WriteLine("Introduce la CR");
+                            BossList[NumeroTotal].ChallengeRate = Convert.ToInt32(Console.ReadLine());
+                            NumeroTotal++;
+                            Console.WriteLine("¿Quieres añadir otro?\nEscribe Si para añadir otro y cualquier botón para terminar esta operación");
+                            Condicion = Console.ReadLine();
+                        }
+                        break;
+                    case "3":
+                        
+                        foreach(Boss Expulsar in BossList)
+                        {
+                            if(giga==0 && Expulsar.TYPE == "Gigamax")
+                            {
+                                NombreGiga.AppendChild(Bosses.CreateTextNode(Expulsar.NAME));
+                                CRgiga.AppendChild(Bosses.CreateTextNode(Convert.ToString(Expulsar.ChallengeRate)));
+                                giga++;
+                            }
+                            else if (dina == 0 && Expulsar.TYPE == "Dinamax")
+                            {
+                                NombreDina.AppendChild(Bosses.CreateTextNode(Expulsar.NAME));
+                                CRdina.AppendChild(Bosses.CreateTextNode(Convert.ToString(Expulsar.ChallengeRate)));
+                                dina++;
+                            }
+                            else if(giga>0 && Expulsar.TYPE == "Gigamax")
+                            {
+                                Gigamax = Bosses.CreateElement("Gigamax");
+                                raiz.AppendChild(Gigamax);
+                                
+                                NombreGiga = Bosses.CreateElement("Nombre");
+                                Gigamax.AppendChild(NombreGiga);
+                                NombreGiga.AppendChild(Bosses.CreateTextNode(Expulsar.NAME));
+                                
+                                CRgiga = Bosses.CreateElement("CR");
+                                Gigamax.AppendChild(CRgiga);
+                                CRgiga.AppendChild(Bosses.CreateTextNode(Convert.ToString(Expulsar.ChallengeRate)));
+                            }
+                            else if(dina>0 && Expulsar.TYPE == "Dinamax")
+                            {
+                                Dinamax = Bosses.CreateElement("Dinamax");
+                                raiz.AppendChild(Dinamax);
+                                
+                                NombreDina = Bosses.CreateElement("Nombre");
+                                Dinamax.AppendChild(NombreDina);
+                                NombreDina.AppendChild(Bosses.CreateTextNode(Expulsar.NAME));
+                                
+                                CRdina = Bosses.CreateElement("CR");
+                                Dinamax.AppendChild(CRdina);
+                                CRdina.AppendChild(Bosses.CreateTextNode(Convert.ToString(Expulsar.ChallengeRate)));
+                            }
+
+                        }
+                        Bosses.Save("d:\\xml\\Bosses.xml");
+                        break;
+                    case "4":
+                        foreach (Boss FB in BossList)
+                        {
+                            FB.BossInfo();
+                        }
+                        break;
+                    default:
+                        Environment.Exit(0); 
+                        break;
                 }
-                else if (Condicion == "Dinamax" || Condicion == "dinamax" || Condicion == "dina" || Condicion == "Dina" || Condicion == "DINA" || Condicion == "DINAMAX") //Same here que con si
-                {
-                    if (dina == 0) //Aqui mira si es la primera vez que se crea un Dinamax
-                    {
-                        Console.WriteLine("\n\nIntroduce el nombre: ");
-                        NombreDina.AppendChild(Bosses.CreateTextNode(Console.ReadLine()));
-                        Console.WriteLine("\nIntroduce su CR: ");
-                        CRdina.AppendChild(Bosses.CreateTextNode(Console.ReadLine()));
-                        dina++;
-                    }
-                    else
-                    {
-                        Dinamax = Bosses.CreateElement("Dinamax");
-                        raiz.AppendChild(Dinamax);
-                        Console.WriteLine("\n\nIntroduce el nombre: ");
-                        NombreDina = Bosses.CreateElement("Nombre");
-                        Dinamax.AppendChild(NombreDina);
-                        NombreDina.AppendChild(Bosses.CreateTextNode(Console.ReadLine()));
-                        Console.WriteLine("\nIntroduce su CR: ");
-                        CRdina = Bosses.CreateElement("CR");
-                        Dinamax.AppendChild(CRdina);
-                        CRdina.AppendChild(Bosses.CreateTextNode(Console.ReadLine()));
-                    }
-                    
-                }
-                else
-                {
-                    Console.WriteLine("No has utilizado un tipo especificado");
-                }
-                Console.WriteLine("¿Quieres continuar o salir?\nIntroduce Si para empezar o cualquier botón para salir");
-                Condicion = Console.ReadLine();
             }
+             
+            
+            
 
             Bosses.Save("d:\\xml\\Bosses.xml"); //Y aquí se guarda el archivo xml, es probable que tengas que editar esto para que funcione.
             
