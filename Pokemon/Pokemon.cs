@@ -89,7 +89,7 @@ namespace AprendiendoCShard.Pokemon
         }
 
 
-        private byte FastLevelCalculator() //E = 4 * n^3 / 5
+        private byte FastLevelCalculator() //Fórmula: E = 4 * n^3 / 5
         {
             byte n = (byte)(Level + 1);
             ulong newExp = Experience;
@@ -103,7 +103,7 @@ namespace AprendiendoCShard.Pokemon
             return Level;
         }
 
-        private byte MediumLevelCalculator() //E = n^3
+        private byte MediumLevelCalculator() //Fórmula: E = n^3
         {
             byte n = (byte)(Level + 1);
             ulong newExp = Experience;
@@ -117,7 +117,7 @@ namespace AprendiendoCShard.Pokemon
             return Level;
         }
 
-        private byte SlowLevelCalculator() //E = 5 * n^3 / 4
+        private byte SlowLevelCalculator() //Fórmula: E = 5 * n^3 / 4
         {
             byte n = (byte)(Level + 1);
             ulong newExp = Experience;
@@ -131,7 +131,7 @@ namespace AprendiendoCShard.Pokemon
             return Level;
         }
 
-        private byte ParabolicLevelCalculator() //E = 6/5*n^3 − 15*n^2 + 100*n − 140
+        private byte ParabolicLevelCalculator() //Fórmula: E = 6/5*n^3 − 15*n^2 + 100*n − 140
         {
             byte n = (byte)(Level + 1);
             ulong newExp = Experience;
