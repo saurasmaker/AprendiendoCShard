@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+
+<pokedex>
+	<pokemon id = "1">
+		<name>Bulbasaur</name>
+		<kind>Seed</kind>
+		<description></description>
+		<health>45</health>
+		<attack>49</attack>
+		<specialAttack>65</specialAttack>
+		<defense>49</defense>
+		<specialDefense>65</specialDefense>
+		<speed>45</speed>
+	</pokemon>
+	
+	
+</pokedex>

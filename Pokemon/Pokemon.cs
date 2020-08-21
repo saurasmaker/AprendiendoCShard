@@ -230,6 +230,7 @@ namespace AprendiendoCShard.Pokemon
 
 
         //Getters && Setters
+        public string Id { get; set; }
         public string Name { get; set; }
 
         public string Kind { get; set; }
@@ -240,7 +241,7 @@ namespace AprendiendoCShard.Pokemon
             set { if(value.Length < 1000) description = value; }
         }
 
-        public byte HealthPoints { get; set; }
+        public byte Health { get; set; }
 
         public byte Attack { get; set; }
 
