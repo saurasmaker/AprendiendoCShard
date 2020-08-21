@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AprendiendoCShard.Pokemon
 {
-    class Pokemon
+    class OPokemon
     {
         //Static Structs
         public struct Stat
@@ -68,7 +68,7 @@ namespace AprendiendoCShard.Pokemon
 
 
         //Constructors
-        public Pokemon()
+        public OPokemon()
         {
         }
 

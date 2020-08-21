@@ -9,8 +9,8 @@ namespace AprendiendoCShard.Pokemon
 {
     class Pokedex
     {
-        private static string path = Directory.GetCurrentDirectory() + "/Saves/pokedex.xml";
-        private List<Pokemon> pokemonList;
+        private static string path = Directory.GetCurrentDirectory() + "/../../../Saves/pokedex.xml";
+        private List<OPokemon> pokemonList;
 
 
         //Constructors
@@ -19,7 +19,7 @@ namespace AprendiendoCShard.Pokemon
 
         }
 
-        public Pokedex(List<Pokemon> pokemonList)
+        public Pokedex(List<OPokemon> pokemonList)
         {
             this.pokemonList = pokemonList;
         }
@@ -63,11 +63,11 @@ namespace AprendiendoCShard.Pokemon
 
 
 
-        public static void SaveInXML(List<Pokemon> pokedex)
+        public static void SaveInXML(List<OPokemon> pokedex)
         {
             XDocument doc = PreparedXMLDocument();
 
-            foreach (Pokemon p in pokedex)
+            foreach (OPokemon p in pokedex)
             {
                 XElement pokemon = new XElement("pokemon");
                 pokemon.Add(new XAttribute("id", p.Id));
@@ -91,7 +91,7 @@ namespace AprendiendoCShard.Pokemon
 
 
 
-        public static void SavePokemonInXML(Pokemon save)
+        public static void SavePokemonInXML(OPokemon save)
         {
             XDocument doc = GetXMLDocument();
             if (doc == null)
@@ -117,10 +117,10 @@ namespace AprendiendoCShard.Pokemon
 
 
 
-        public static List<Pokemon> LoadFromXML()
+        public static List<OPokemon> LoadFromXML()
         {
             XDocument doc = GetXMLDocument();
-            List<Pokemon> pokemon = null;
+            List<OPokemon> pokemon = null;
 
             if (doc != null)
             {
@@ -130,7 +130,7 @@ namespace AprendiendoCShard.Pokemon
                     i++;
                     try
                     {
-                        Pokemon newPoke = new Pokemon();
+                        OPokemon newPoke = new OPokemon();
                         newPoke.Id = e.Attribute("id").Value;
                         newPoke.Name = e.Element("name").Value;
                         newPoke.Kind = e.Element("kind").Value;
@@ -156,17 +156,17 @@ namespace AprendiendoCShard.Pokemon
 
         
 
-        public static Pokemon LoadPokemonFromXML(string id)
+        public static OPokemon LoadPokemonFromXML(string id)
         {
             XDocument doc = GetXMLDocument();
-            Pokemon pokemon = null;
+            OPokemon pokemon = null;
 
             if (doc != null)
             {
                 foreach (XElement e in doc.Elements("pokemon"))               
                     if (e.Attribute("id").Value.Equals(id))
                     {
-                        pokemon = new Pokemon();
+                        pokemon = new OPokemon();
                         pokemon.Id = e.Attribute("id").Value;
                         pokemon.Name = e.Element("name").Value;
                         pokemon.Kind = e.Element("kind").Value;
