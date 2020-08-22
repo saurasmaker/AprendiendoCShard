@@ -37,3 +37,16 @@ C:\Users\albar\OneDrive\Documentos\repositorios\AprendiendoCSharp\obj\Debug\netc
 C:\Users\albar\OneDrive\Documentos\repositorios\AprendiendoCSharp\obj\Debug\netcoreapp3.1\AprendiendoCShard.dll
 C:\Users\albar\OneDrive\Documentos\repositorios\AprendiendoCSharp\obj\Debug\netcoreapp3.1\AprendiendoCShard.pdb
 C:\Users\albar\OneDrive\Documentos\repositorios\AprendiendoCSharp\obj\Debug\netcoreapp3.1\AprendiendoCShard.genruntimeconfig.cache
+C:\Users\albar\repositorios\AprendiendoCSharp\bin\Debug\netcoreapp3.1\AprendiendoCShard.exe
+C:\Users\albar\repositorios\AprendiendoCSharp\bin\Debug\netcoreapp3.1\AprendiendoCShard.deps.json
+C:\Users\albar\repositorios\AprendiendoCSharp\bin\Debug\netcoreapp3.1\AprendiendoCShard.runtimeconfig.json
+C:\Users\albar\repositorios\AprendiendoCSharp\bin\Debug\netcoreapp3.1\AprendiendoCShard.runtimeconfig.dev.json
+C:\Users\albar\repositorios\AprendiendoCSharp\bin\Debug\netcoreapp3.1\AprendiendoCShard.dll
+C:\Users\albar\repositorios\AprendiendoCSharp\bin\Debug\netcoreapp3.1\AprendiendoCShard.pdb
+C:\Users\albar\repositorios\AprendiendoCSharp\obj\Debug\netcoreapp3.1\AprendiendoCShard.csprojAssemblyReference.cache
+C:\Users\albar\repositorios\AprendiendoCSharp\obj\Debug\netcoreapp3.1\AprendiendoCShard.AssemblyInfoInputs.cache
+C:\Users\albar\repositorios\AprendiendoCSharp\obj\Debug\netcoreapp3.1\AprendiendoCShard.AssemblyInfo.cs
+C:\Users\albar\repositorios\AprendiendoCSharp\obj\Debug\netcoreapp3.1\AprendiendoCShard.csproj.CoreCompileInputs.cache
+C:\Users\albar\repositorios\AprendiendoCSharp\obj\Debug\netcoreapp3.1\AprendiendoCShard.dll
+C:\Users\albar\repositorios\AprendiendoCSharp\obj\Debug\netcoreapp3.1\AprendiendoCShard.pdb
+C:\Users\albar\repositorios\AprendiendoCSharp\obj\Debug\netcoreapp3.1\AprendiendoCShard.genruntimeconfig.cache

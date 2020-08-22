@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace AprendiendoCShard.Pokemon
+namespace AprendiendoCSharp.Pokemon
 {
     class OPokemon
     {
@@ -74,6 +74,20 @@ namespace AprendiendoCShard.Pokemon
 
 
         //Methods
+        public void Show()
+        {
+            Console.WriteLine("Nombre: " + Name);
+            Console.WriteLine("Tipo: " + Kind);
+            Console.WriteLine("Descripción: " + Description);
+            Console.WriteLine("PS: " + Health);
+            Console.WriteLine("Ataque: " + Attack);
+            Console.WriteLine("Ataque Esp: " + SpecialAttack);
+            Console.WriteLine("Defense: " + Defense);
+            Console.WriteLine("Defense Esp: " + SpecialDefense);
+            Console.WriteLine("Velocidad: " + Speed);
+        }
+
+
         public byte LevelCalculator(byte lvlType)
         {
             return lvlType switch

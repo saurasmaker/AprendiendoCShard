@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace AprendiendoCShard.Apuntes
+namespace AprendiendoCSharp.Apuntes
 {
     class VariablesTypes
     {

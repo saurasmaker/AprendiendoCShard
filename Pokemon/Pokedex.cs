@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Xml.Linq;
 
-namespace AprendiendoCShard.Pokemon
+namespace AprendiendoCSharp.Pokemon
 {
     class Pokedex
     {
-        private static string path = Directory.GetCurrentDirectory() + "/../../../Saves/pokedex.xml";
+        private static string path = Directory.GetCurrentDirectory() + "\\..\\..\\..\\Saves\\pokedex.xml";   
         private List<OPokemon> pokemonList;
 
 
@@ -163,7 +164,8 @@ namespace AprendiendoCShard.Pokemon
 
             if (doc != null)
             {
-                foreach (XElement e in doc.Elements("pokemon"))               
+                foreach(XElement e in doc.Root.Elements())
+                {
                     if (e.Attribute("id").Value.Equals(id))
                     {
                         pokemon = new OPokemon();
@@ -177,8 +179,8 @@ namespace AprendiendoCShard.Pokemon
                         pokemon.Defense = Convert.ToByte(e.Element("defense").Value);
                         pokemon.SpecialDefense = Convert.ToByte(e.Element("specialDefense").Value);
                         pokemon.Speed = Convert.ToByte(e.Element("speed").Value);
-
                     }
+                }
             }
             
             return pokemon;
