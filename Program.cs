@@ -6,7 +6,7 @@ using System.Text;
 
 using System.Net;
 using System.Net.Sockets;
-
+using AprendiendoCShard.Sockets;
 
 namespace AprendiendoCShard
 {
@@ -14,14 +14,16 @@ namespace AprendiendoCShard
     {
         static void Main(string[] args)
         {
-            Thread HILO = new Thread(()=>GO("Cosita","Pasan"));
+            /*Thread HILO = new Thread(()=>GO("Cosita","Pasan"));
             HILO.Start();
             HILO.Join();
             Thread.Sleep(2000);
             for(int i = 0; i < 1000; i++)
             {
                 Console.WriteLine("x");
-            }
+            }*/
+
+            Server.connection();
         }
 
         static void Metodo(object o)
