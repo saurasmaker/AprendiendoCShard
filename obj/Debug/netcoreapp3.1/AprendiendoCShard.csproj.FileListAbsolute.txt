@@ -11,3 +11,16 @@ C:\Users\saura\Proyectos_Programacion\C#\AprendiendoCShard\AprendiendoCShard\obj
 C:\Users\saura\Proyectos_Programacion\C#\AprendiendoCShard\AprendiendoCShard\obj\Debug\netcoreapp3.1\AprendiendoCShard.dll
 C:\Users\saura\Proyectos_Programacion\C#\AprendiendoCShard\AprendiendoCShard\obj\Debug\netcoreapp3.1\AprendiendoCShard.pdb
 C:\Users\saura\Proyectos_Programacion\C#\AprendiendoCShard\AprendiendoCShard\obj\Debug\netcoreapp3.1\AprendiendoCShard.genruntimeconfig.cache
+C:\Users\Usuario\Documents\GitHub\AprendiendoCShard\bin\Debug\netcoreapp3.1\AprendiendoCShard.exe
+C:\Users\Usuario\Documents\GitHub\AprendiendoCShard\bin\Debug\netcoreapp3.1\AprendiendoCShard.deps.json
+C:\Users\Usuario\Documents\GitHub\AprendiendoCShard\bin\Debug\netcoreapp3.1\AprendiendoCShard.runtimeconfig.json
+C:\Users\Usuario\Documents\GitHub\AprendiendoCShard\bin\Debug\netcoreapp3.1\AprendiendoCShard.runtimeconfig.dev.json
+C:\Users\Usuario\Documents\GitHub\AprendiendoCShard\bin\Debug\netcoreapp3.1\AprendiendoCShard.dll
+C:\Users\Usuario\Documents\GitHub\AprendiendoCShard\bin\Debug\netcoreapp3.1\AprendiendoCShard.pdb
+C:\Users\Usuario\Documents\GitHub\AprendiendoCShard\obj\Debug\netcoreapp3.1\AprendiendoCShard.csprojAssemblyReference.cache
+C:\Users\Usuario\Documents\GitHub\AprendiendoCShard\obj\Debug\netcoreapp3.1\AprendiendoCShard.AssemblyInfoInputs.cache
+C:\Users\Usuario\Documents\GitHub\AprendiendoCShard\obj\Debug\netcoreapp3.1\AprendiendoCShard.AssemblyInfo.cs
+C:\Users\Usuario\Documents\GitHub\AprendiendoCShard\obj\Debug\netcoreapp3.1\AprendiendoCShard.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Documents\GitHub\AprendiendoCShard\obj\Debug\netcoreapp3.1\AprendiendoCShard.dll
+C:\Users\Usuario\Documents\GitHub\AprendiendoCShard\obj\Debug\netcoreapp3.1\AprendiendoCShard.pdb
+C:\Users\Usuario\Documents\GitHub\AprendiendoCShard\obj\Debug\netcoreapp3.1\AprendiendoCShard.genruntimeconfig.cache
