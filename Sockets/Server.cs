@@ -11,8 +11,6 @@ namespace AprendiendoCShard.Sockets
 {
     class Server
     {
-        string name = "guest_user";
-        string myName = "gest_user";
 
         public static void connection()
         {
@@ -44,44 +42,40 @@ namespace AprendiendoCShard.Sockets
 
         private static void SendMsg(object o)
         {
-            Socket send = (Socket)o;
-            byte[] infoSend = new byte[255];
-            string a;
-            int endIndex;
+            Socket send = (Socket) o;           
+            string msg;
 
             Console.WriteLine("Introduce tu nombre: ");
             string myName = Console.ReadLine();
 
-            while ((a = " -" + myName + ": " + Console.ReadLine()) != null)
+            while (true)
             {
-                infoSend = Encoding.ASCII.GetBytes(a);
-                send.Send(infoSend, 0, infoSend.Length, 0);
-                //Console.WriteLine("Enviar: " + Encoding.Default.GetString(byRec)); //Mostramos lo recibido
+                byte[] byteMsg = new byte[1024];
+                msg = " -" + myName + ": " + Console.ReadLine();
+                byteMsg = Encoding.ASCII.GetBytes(msg);
+                send.Send(byteMsg, 0, byteMsg.Length, 0);
             }
-
-            return;
         }
 
         private static void ReceiveMsg(object o)
         {
             Socket receive = (Socket) o;
-            byte[] byRec = new byte[255];
+            
             int a;
             string msg;
             int endIndex;
 
-            while ((a = receive.Receive(byRec, 0, byRec.Length, 0)) != 0)
+            while (true)
             {
-                Array.Resize(ref byRec, a);
-                msg = Encoding.ASCII.GetString(byRec);
+                byte[] buffer = new byte[1024];
+                receive.Receive(buffer);
+                msg = Encoding.ASCII.GetString(buffer);
                 endIndex = msg.IndexOf('\0');
                 if (endIndex > 0)
-                    msg = msg.Substring(0,endIndex);
+                    msg = msg.Substring(0, endIndex);
 
                 Console.WriteLine(msg); //Mostramos lo recibido
             }
-
-            return;
         }
     }
 
